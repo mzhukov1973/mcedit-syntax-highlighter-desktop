@@ -1,0 +1,70 @@
+#
+# FreeDesktop.org .desktop files syntax higlighter for MC Editor
+#
+# Author:            Maxim Zhukov <mzhukov31415dev@gmail.com>
+# GitHub repository: https://github.com/mzhukov1973/mcedit-syntax-highlighter-desktop
+# Based on:          https://standards.freedesktop.org/desktop-entry-spec/latest (version 1.2alpha from 2017-12-24)
+#
+# Created on:        2018-05-06
+# Last updated on:   2018-05-07
+# Version:           0.0.1
+#
+# License:           MIT
+#
+# Changes in 0.0.1:  Initial commit, first draft.
+#
+
+context default rgb033 base base
+#Comment:
+    keyword linestart #*\n rgb220 base bold
+#Group header:
+    keyword linestart [*] rgb550 base bold
+#Special symbols:
+    keyword = brightred base base
+    keyword ; magenta base base
+    keyword true rgb050 base base
+    keyword false rgb050 base base
+#Entries:
+# (Keys, recognized by FreeDesktop standard ver. 1.2:)
+    keyword linestart Type rgb044 base bold
+    keyword linestart Version rgb044 base bold
+    keyword linestart Name rgb044 base bold
+    keyword linestart GenericName rgb044 base bold
+    keyword linestart NoDisplay rgb044 base bold
+    keyword linestart Comment rgb044 base bold
+    keyword linestart Icon rgb044 base bold
+    keyword linestart Hidden rgb044 base bold
+    keyword linestart OnlyShowIn rgb044 base bold
+    keyword linestart NotShowIn rgb044 base bold
+    keyword linestart DBusActivatable rgb044 base bold
+    keyword linestart TryExec rgb044 base bold
+    keyword linestart Exec rgb044 base bold
+    keyword linestart Path rgb044 base bold
+    keyword linestart Terminal rgb044 base bold
+    keyword linestart Actions rgb044 base bold
+    keyword linestart MimeType rgb044 base bold
+    keyword linestart Categories rgb044 base bold
+    keyword linestart Implements rgb044 base bold
+    keyword linestart StartupNotify rgb044 base bold
+    keyword linestart StartupWMClass rgb044 base bold
+    keyword linestart URL rgb044 base bold
+# N.B.! A bit unclear here: in "Recognized desktop entry keys" key name is listed as "Keywords",
+#  while "Changes from version 1.0 to 1.1" state this (verbatim): "Add Keyword key.". Adding both versions as a precaution:
+    keyword linestart Keywords rgb044 base bold
+    keyword linestart Keyword rgb044 base bold
+# (Keys, currently reserved for use in KDE:)
+    keyword linestart Dev rgb030 base bold
+    keyword linestart FSType rgb030 base bold
+    keyword linestart MountPoint rgb030 base bold
+    keyword linestart ReadOnly rgb030 base bold
+    keyword linestart UnmountIcon rgb030 base bold
+# (Keys, the rest:)
+    keyword linestart \[ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-\] rgb011 base bold
+# (Keys with locale postfix:)
+#     From "Localized values for keys":
+#       ...Keys with type localestring may be postfixed by [LOCALE], where LOCALE is the locale type of the entry.
+#       LOCALE must be of the form lang_COUNTRY.ENCODING@MODIFIER, where _COUNTRY, .ENCODING, and @MODIFIER may be omitted....
+context [ ] rgb131 base bold
+    keyword _ rgb131 base bold
+    keyword @ rgb131 base bold
+    keyword \{abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890\} rgb020 base base

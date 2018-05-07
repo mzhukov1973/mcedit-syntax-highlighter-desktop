@@ -10,6 +10,8 @@
 
 **Version:** `0.0.1`
 
+**License:** [MIT](https://opensource.org/licenses/MIT)
+
 **Changes<sup>0.0.1</sup>:** Initial commit, first draft.
 
 ### Setup:

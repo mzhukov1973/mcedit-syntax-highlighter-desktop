@@ -1,4 +1,4 @@
-### [MC Editor](https://midnight-commander.org) syntax higlighter definitions for [FreeDesktop.org](https://freedesktop.org) .desktop files
+## [MC Editor](https://midnight-commander.org) syntax higlighter definitions for [FreeDesktop.org](https://freedesktop.org) .desktop files
 
 **Author:** <small>Maxim Zhukov [`mzhukov31415dev@gmail.com`](mzhukov31415dev@gmail.com)</small><br>
 **GitHub repository:** [`https://github.com/mzhukov1973/mcedit-syntax-highlighter-desktop`](https://github.com/mzhukov1973/mcedit-syntax-highlighter-desktop)
@@ -9,9 +9,9 @@
 
 **Version:** `0.0.1`
 
-**Changes in 0.0.1:** Initial commit, first draft.
+**Changes<sup>0.0.1</sup>:** Initial commit, first draft.
 
-#### Setup:
+### Setup:
 *For personal use:*
 
 Just drop `desktop.syntax` in `~/.config/mc/mcedit/syntax` directory and add following two lines to the `~/.config/mc/mcedit/Syntax`:

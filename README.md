@@ -7,8 +7,8 @@
 **Created on:** 2018-05-06<br>
 **Last updated on:** 2018-05-07
 
-**Version:** `1.0.0`
+**Version:** `0.0.1`
 
-**Changes in 1.0.0:** Initial version
+**Changes in 0.0.1:** Initial commit, first draft.
 
 

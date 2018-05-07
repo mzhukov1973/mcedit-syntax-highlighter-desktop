@@ -1,4 +1,4 @@
-### [MC Editor](https://midnight-commander.org) syntax higlighter definitions for [FreeDesktop.org](https://freedesktop.org) .desktop files <small>123</small>
+### [MC Editor](https://midnight-commander.org) syntax higlighter definitions for [FreeDesktop.org](https://freedesktop.org) .desktop files
 
 **Author:** <small>Maxim Zhukov [`mzhukov31415dev@gmail.com`](mzhukov31415dev@gmail.com)</small><br>
 **GitHub repository:** [`https://github.com/mzhukov1973/mcedit-syntax-highlighter-desktop`](https://github.com/mzhukov1973/mcedit-syntax-highlighter-desktop)
@@ -21,6 +21,7 @@ file ..\*\\.(desktop|DESKTOP)$ Desktop\sDefinition
 include /home/mzhukov/.config/mc/mcedit/syntax/desktop.syntax
 ```
 *Globaly, for everyone on the machine mc is running on:*
+
 Copy `desktop.syntax` in `/usr/share/mc/syntax` directory and add following two lines to the `/usr/share/mc/syntax/Syntax`:
 
 ```php

@@ -5,7 +5,7 @@
 
 <big><big><big>**Based on:**</big></big></big> [FreeDesktop specs](https://standards.freedesktop.org/desktop-entry-spec/latest) (version 1.2alpha from 2017-12-24)<br>
 <>**Created on:**</> 2018-05-06<br>
-<big>**Last updated on:**</big> 2018-05-07
+<large>**Last updated on:**</large> 2018-05-07
 
 <big>**Version:**</big> 1.0.0
 

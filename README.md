@@ -3,7 +3,7 @@
 <big>**Author:**</big> Maxim Zhukov [mzhukov31415dev@gmail.com](mzhukov31415dev@gmail.com)<br>
 <big>**GitHub repository:**</big> [https://github.com/mzhukov1973/mcedit-syntax-highlighter-desktop](https://github.com/mzhukov1973/mcedit-syntax-highlighter-desktop)
 
-<big>**Based on:**</big> [FreeDesktop specs](https://standards.freedesktop.org/desktop-entry-spec/latest) (version 1.2alpha from 2017-12-24)<br>
+<big><big><big>**Based on:**</big></big></big> [FreeDesktop specs](https://standards.freedesktop.org/desktop-entry-spec/latest) (version 1.2alpha from 2017-12-24)<br>
 <>**Created on:**</> 2018-05-06<br>
 <big>**Last updated on:**</big> 2018-05-07
 

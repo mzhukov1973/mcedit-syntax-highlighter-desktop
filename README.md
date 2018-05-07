@@ -19,7 +19,7 @@ Just drop `desktop.syntax` in `~/.config/mc/mcedit/syntax` directory and add fol
 
 ```php
 file ..\*\\.(desktop|DESKTOP)$ Desktop\sDefinition
-include /home/mzhukov/.config/mc/mcedit/syntax/desktop.syntax
+include /home/yourusername/.config/mc/mcedit/syntax/desktop.syntax
 ```
 *Globaly, for everyone on the machine mc is running on:*
 
@@ -27,5 +27,5 @@ Copy `desktop.syntax` in `/usr/share/mc/syntax` directory and add following two 
 
 ```php
 file ..\*\\.(desktop|DESKTOP)$ Desktop\sDefinition
-include /home/mzhukov/.config/mc/mcedit/syntax/desktop.syntax
+include /home/yourusername/.config/mc/mcedit/syntax/desktop.syntax
 ```

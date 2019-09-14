@@ -1,20 +1,24 @@
-########################################################################
-##  Syntax highlighting for VALA source code                          ##
-##   (for MC Editor)                                                  ##
-##                                                                    ##
-##   Version: 0.0.1                                                   ##
-##                                                                    ##
-##   Author:  Maxim Zhukov <mzhukov31415dev@gmail.com> 2019+          ##
-##                                                                    ##
-##   ToDo:                                                            ##
-##     ~ A LOT!                                                       ##
-##     ~ ...                                                          ##
-##                                                                    ##
-##   History:                                                         ##
-##     ~ v0.0.1 [2019-05-05] --- First working version.               ##
-##                                                                    ##
-########################################################################
-
+#############################################################################################
+##  Syntax highlighting for VALA source code                                               ##
+##   (for MC Editor)                                                                       ##
+##                                                                                         ##
+##   Version: 0.0.2                                                                        ##
+##                                                                                         ##
+##   Author:  Maxim Zhukov <mzhukov31415dev@gmail.com> 2019+                               ##
+##                                                                                         ##
+##   License: MIT                                                                          ##
+##                                                                                         ##
+##   GitHub repository: https://github.com/mzhukov1973/mcedit-syntax-highlighter-desktop   ##
+##                                                                                         ##
+##   ToDo:                                                                                 ##
+##     ~ A LOT!                                                                            ##
+##     ~ ...                                                                               ##
+##                                                                                         ##
+##   History:                                                                              ##
+##     ~ v0.0.2 [2019-09-14] --- Added defines for uniform colours.                        ##
+##     ~ v0.0.1 [2019-05-05] --- First working version.                                    ##
+##                                                                                         ##
+#############################################################################################
 caseinsensitive
 
 define cl_def             lightgray base  base

@@ -1,5 +1,26 @@
-# Webmanifest (webmanifest.json/manifest.json) syntax highlighting
-
+#############################################################################################
+##  Webmanifest (webmanifest.json/manifest.json) syntax highlighting                       ##
+##   (for MC Editor)                                                                       ##
+##                                                                                         ##
+##   Version: 0.0.2                                                                        ##
+##                                                                                         ##
+##   Author:  Maxim Zhukov <mzhukov31415dev@gmail.com> 2019+                               ##
+##                                                                                         ##
+##   License: MIT                                                                          ##
+##                                                                                         ##
+##   GitHub repository: https://github.com/mzhukov1973/mcedit-syntax-highlighter-desktop   ##
+##                                                                                         ##
+##   ToDo:                                                                                 ##
+##     ~ A LOT!                                                                            ##
+##     ~ ...                                                                               ##
+##                                                                                         ##
+##   History:                                                                              ##
+##     ~ v0.0.2 [2019-09-14] ==>   Added defines for uniform colours.                      ##
+##                           ==>   Added well known members, their properties &            ##
+##                               well known values.                                        ##
+##     ~ v0.0.1 [2018-04-02] ==>   First working version.                                  ##
+##                                                                                         ##
+#############################################################################################
 caseinsensitive
 wholechars abcdefghijklmnopqrstuvwxyz0123456789_
 define cl_def               lightgray base base

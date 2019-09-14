@@ -6,11 +6,13 @@
 **Based on:** [FreeDesktop specs](https://standards.freedesktop.org/desktop-entry-spec/latest) (version 1.2alpha from 2017-12-24)
 
 **Created on:** 2018-05-06<br><br>
-**Last updated on:** 2018-05-07
+**Last updated on:** 2019-09-14
 
-**Version:** `0.0.1`
+**Version:** `0.0.2`
 
 **License:** [MIT](https://opensource.org/licenses/MIT)
+
+**Changes<sup>0.0.2</sup>:** Added rules for .vala, [web]manifest.json & meson.build files.
 
 **Changes<sup>0.0.1</sup>:** Initial commit, first draft.
 

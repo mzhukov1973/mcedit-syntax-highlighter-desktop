@@ -1,0 +1,63 @@
+#
+# FreeDesktop.org .directory files v1.2 syntax higlighter for MC Editor
+#
+# Author:            Maxim Zhukov <mzhukov31415dev@gmail.com>
+# GitHub repository: https://github.com/mzhukov1973/mcedit-syntax-highlighter-desktop
+# Based on:          https://standards.freedesktop.org/desktop-entry-spec/latest (version 1.2alpha from 2017-12-24)
+#
+# Created on:        2018-05-06
+# Last updated on:   2018-05-07
+# Version:           0.0.1
+#
+# License:           MIT
+#
+# Changes in 0.0.1:  Initial commit, first draft.
+#
+
+context default rgb333 base base
+#Comment:
+    keyword linestart #*\n rgb220 base bold
+#Group header:
+    keyword linestart [Desktop\sEntry] rgb550 base bold
+#Known extensions:
+    keyword linestart [Dolphin] rgb550 base base
+    keyword linestart [Dettings] rgb550 base base
+#Unknown group header:
+    keyword linestart [*] rgb522 base base
+#Special symbols:
+    keyword = brightred base base
+    keyword ; magenta base base
+    keyword true rgb050 base bold
+    keyword false rgb050 base bold
+#Entries:
+# (Keys, recognized by FreeDesktop standard ver. 1.2:)
+    keyword linestart Type rgb044 base bold
+    keyword linestart Version rgb044 base bold
+    keyword linestart Name rgb044 base bold
+    keyword linestart Icon rgb044 base bold
+    keyword linestart Comment rgb044 base bold
+    keyword linestart NoDisplay rgb044 base bold
+# (Extension-related keys:)
+# (  [Dolpin]:)
+    keyword linestart Timestamp rgb553 base bold
+    keyword linestart Timestamp rgb553 base bold
+    keyword linestart ViewMode rgb553 base bold
+    keyword linestart VisibleRoles rgb553 base bold
+# (  [Settings] (re [Dolphin]):)
+    keyword linestart HiddenFilesShown rgb553 base bold
+# (Well known values:)
+    keyword whole Directory rgb151 base base
+    keyword whole UTF-8 rgb151 base base
+    keyword whole UTF8 rgb151 base base
+
+# (Keys, the rest:)
+    keyword linestart \[ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-\] rgb011 base bold
+
+# (Keys with locale postfix:)
+#     From "Localized values for keys":
+#       ...Keys with type localestring may be postfixed by [LOCALE], where LOCALE is the locale type of the entry.
+#       LOCALE must be of the form lang_COUNTRY.ENCODING@MODIFIER, where _COUNTRY, .ENCODING, and @MODIFIER may be omitted....
+context [ ] rgb131 base bold
+    keyword _ rgb131 base bold
+    keyword @ rgb131 base bold
+    keyword \{abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890\} rgb020 base base

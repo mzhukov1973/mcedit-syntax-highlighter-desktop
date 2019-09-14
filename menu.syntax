@@ -1,0 +1,117 @@
+#
+# FreeDesktop.org .menu files v1.1 syntax higlighter for MC Editor
+#
+# Author:            Maxim Zhukov <mzhukov31415dev@gmail.com>
+# GitHub repository: https://github.com/mzhukov1973/mcedit-syntax-highlighter-desktop
+# Based on:          https://specifications.freedesktop.org/menu-spec/menu-spec-latest.html (version 1.1 from 2016-08-20)
+#
+# Created on:        2019-05-18
+# Last updated on:   2019-05-18
+# Version:           0.0.1
+#
+# License:           MIT
+#
+# Changes in 0.0.1:  Initial commit, first draft.
+#
+
+context default rgb333 base base
+    keyword <!--*--> rgb220 base bold
+    keyword = brightred base base
+    keyword whole true      rgb151 base base
+    keyword whole false     rgb511 base base
+    keyword whole null      rgb430 base bold
+    keyword whole UTF-8 rgb151 base base
+    keyword whole UTF8 rgb151 base base
+
+context <!-- --> rgb220 base bold
+    spellcheck
+
+context <!DOCTYPE > rgb333 base base
+    keyword <\! cyan base bold
+    keyword > cyan base bold
+    keyword <!--*--> rgb220 base bold
+    keyword < cyan base base
+    keyword > cyan base base
+    keyword '*' brightgreen base base
+    keyword "*" brightgreen base base
+    keyword DOCTYPE brightred base base
+    keyword PUBLIC brightred base base
+    spellcheck
+
+#context <MergeFile > rgb300 base base
+#    keyword = brightred base base
+#    keyword MergeFile yellow base base
+##    keyword <\[/\] cyan base bold
+##    keyword > cyan base bold
+#    keyword \{'"\} brightgreen base base
+#    keyword type brightmagenta base base
+#    keyword path rgb553 base base
+#    keyword parent rgb553 base base
+
+#context <\[/\]\{abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_\}\[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_\] \[/\]> rgb333 base base
+context < \[/\]> rgb333 base base
+    keyword < cyan base bold
+    keyword \[/\]> cyan base bold
+    keyword = brightred base base
+    keyword whole type brightmagenta base base
+    keyword whole inline_alias brightmagenta base base
+    keyword whole inline_header brightmagenta base base
+    keyword whole inline_limit brightmagenta base base
+    keyword whole inline brightmagenta base base
+    keyword whole show_empty brightmagenta base base
+    keyword whole path rgb553 base base
+    keyword whole parent rgb553 base base
+    keyword whole menus rgb553 base base
+    keyword whole files rgb553 base base
+    keyword whole true      rgb151 base base
+    keyword whole false     rgb511 base base
+    keyword whole null      rgb430 base bold
+    keyword whole Menu yellow base bold
+    keyword whole Name yellow base base
+    keyword whole AppDir yellow base base
+    keyword whole MergeFile yellow base base
+    keyword whole DefaultAppDirs yellow base base
+    keyword whole DirectoryDir yellow base base
+    keyword whole DefaultDirectoryDirs yellow base base
+    keyword whole Directory yellow base base
+    keyword whole OnlyUnallocated yellow base base
+    keyword whole NotOnlyUnallocated yellow base base
+    keyword whole Deleted yellow base base
+    keyword whole NotDeleted yellow base base
+    keyword whole Include yellow base base
+    keyword whole Exclude yellow base base
+    keyword whole Filename yellow base base
+    keyword whole Category yellow base base
+    keyword whole All yellow base base
+    keyword whole And yellow base base
+    keyword whole Or yellow base base
+    keyword whole Not yellow base base
+    keyword whole MergeDir yellow base base
+    keyword whole DefaultMergeDirs yellow base base
+    keyword whole LegacyDir yellow base base
+    keyword whole KDELegacyDirs yellow base base
+    keyword whole Move yellow base base
+    keyword whole Old yellow base base
+    keyword whole New yellow base base
+    keyword whole Layout yellow base base
+    keyword whole DefaultLayout yellow base base
+    keyword whole Menuname yellow base base
+    keyword whole Separator yellow base base
+    keyword whole Merge yellow base base
+    keyword " brightgreen base base
+    keyword ' brightgreen base base
+#    keyword '*' brightgreen base base
+#    keyword "*" brightgreen base base
+    spellcheck
+
+
+
+context exclusive linestart Version \n rgb333 base base
+    wholechars left ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789`~!@#$%^&\*()-_\+\\|}]{[<,>.?/:;\s\t"'
+    keyword wholeleft \[\s\t\]1.\{0,1,2\} rgb151 base base
+    wholechars left ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmopqrstuvwxyz0123456789`~!@#$%^&\*()-_\+=\|}]{[<,>.?/:;\s\t"'
+    keyword wholeleft \[\s\t\]= brightred base base
+    wholechars left ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789`~!@#$%^&\*()-_\+\\|}]{[<,>.?/:;\s\t"'
+    keyword \[n=\s\t\]1.\{0,1,2\} rgb333 base base
+    keyword \[n=\s\t\]= rgb333 base base
+

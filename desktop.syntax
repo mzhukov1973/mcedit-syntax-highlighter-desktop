@@ -1,5 +1,5 @@
 #
-# FreeDesktop.org .desktop files syntax higlighter for MC Editor
+# FreeDesktop.org .desktop files v1.2 syntax higlighter for MC Editor
 #
 # Author:            Maxim Zhukov <mzhukov31415dev@gmail.com>
 # GitHub repository: https://github.com/mzhukov1973/mcedit-syntax-highlighter-desktop
@@ -14,16 +14,21 @@
 # Changes in 0.0.1:  Initial commit, first draft.
 #
 
-context default rgb033 base base
+context default rgb333 base base
 #Comment:
     keyword linestart #*\n rgb220 base bold
 #Group header:
-    keyword linestart [*] rgb550 base bold
+    keyword linestart [Desktop\sEntry] rgb550 base bold
+    keyword linestart [Desktop\sAction\s\{abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890_-\\:=\+/~#!?|%@$`'"\*\.\}\[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890_-\\:=\+/~#!?|%@$`'"\*\.\]] rgb550 base bold
+#Deprecated KDE-specific group header:
+    keyword linestart [KDE\sDesktop\sEntry] rgb544 base base
+#Unknown group header:
+    keyword linestart [*] rgb522 base base
 #Special symbols:
     keyword = brightred base base
     keyword ; magenta base base
-    keyword true rgb050 base base
-    keyword false rgb050 base base
+    keyword true rgb050 base bold
+    keyword false rgb050 base bold
 #Entries:
 # (Keys, recognized by FreeDesktop standard ver. 1.2:)
     keyword linestart Type rgb044 base bold
@@ -42,29 +47,627 @@ context default rgb033 base base
     keyword linestart Path rgb044 base bold
     keyword linestart Terminal rgb044 base bold
     keyword linestart Actions rgb044 base bold
+    keyword linestart Action rgb044 base bold
+    keyword linestart MimeTypes rgb044 base bold
     keyword linestart MimeType rgb044 base bold
     keyword linestart Categories rgb044 base bold
+    keyword linestart Category rgb044 base bold
     keyword linestart Implements rgb044 base bold
     keyword linestart StartupNotify rgb044 base bold
     keyword linestart StartupWMClass rgb044 base bold
     keyword linestart URL rgb044 base bold
-# N.B.! A bit unclear here: in "Recognized desktop entry keys" key name is listed as "Keywords",
-#  while "Changes from version 1.0 to 1.1" state this (verbatim): "Add Keyword key.". Adding both versions as a precaution:
+# (Used to be in KDE-reserved keys up to v1.0. Moved to the main section since v1.1:)
     keyword linestart Keywords rgb044 base bold
     keyword linestart Keyword rgb044 base bold
 # (Keys, currently reserved for use in KDE:)
+    keyword linestart ServiceTypes rgb030 base bold
+    keyword linestart ServiceType rgb030 base bold
+    keyword linestart DocPath rgb030 base bold
+    keyword linestart InitialPreference rgb030 base bold
+# (At v1.1 previously KDE-exclusive Keywords key was moved to the main section while KDE-specific one has been granted the X-KDE- vendor prefix:)
+    keyword linestart X-KDE-Keywords rgb030 base bold
+    keyword linestart X-KDE-Keyword rgb030 base bold
+# (Keys, currently reserved for use in KDE - used by KDE for entries of the FSDevice type:)
     keyword linestart Dev rgb030 base bold
     keyword linestart FSType rgb030 base bold
+    keyword linestart MountPoints rgb030 base bold
     keyword linestart MountPoint rgb030 base bold
     keyword linestart ReadOnly rgb030 base bold
     keyword linestart UnmountIcon rgb030 base bold
+# (Keys, which ae clearly in use in GNOME/XFCE/KDE/Mate et al. (deprecated keys are pinkish):)
+    keyword linestart X-XFCE-Binaries rgb553 base bold
+    keyword linestart X-XFCE-Category rgb553 base bold
+    keyword linestart X-XFCE-CommandsWithParameter rgb553 base bold
+    keyword linestart X-XFCE-Commands rgb553 base bold
+    keyword linestart X-XFCE-MimeType rgb553 base bold
+    keyword linestart X-MATE-Bugzilla-Bugzilla rgb553 base bold
+    keyword linestart X-MATE-Bugzilla-Product rgb553 base bold
+    keyword linestart X-MATE-Bugzilla-Component rgb553 base bold
+    keyword linestart X-MATE-Bugzilla-Version rgb553 base bold
+    keyword linestart X-MATE-Autostart-Phase rgb553 base bold
+    keyword linestart X-MATE-Autostart-Notify rgb553 base bold
+    keyword linestart X-MATE-AutoRestart rgb553 base bold
+    keyword linestart X-MATE-Provides rgb553 base bold
+    keyword linestart X-GNOME-Bugzilla-Bugzilla rgb553 base bold
+    keyword linestart X-GNOME-Bugzilla-Product rgb553 base bold
+    keyword linestart X-GNOME-Bugzilla-Component rgb553 base bold
+    keyword linestart X-GNOME-Bugzilla-Version rgb553 base bold
+    keyword linestart X-Ubuntu-Gettext-Domain rgb553 base bold
+    keyword linestart X-Flatpak rgb553 base bold
+# (Deprecated keys:)
+    keyword linestart Encoding rgb544 base bold
+    keyword linestart Patterns rgb544 base bold
+    keyword linestart DefaultApp rgb544 base bold
+    keyword linestart MiniIcon rgb544 base bold
+    keyword linestart TerminalOptions rgb544 base bold
+    keyword linestart Protocols rgb544 base bold
+    keyword linestart Extensions rgb544 base bold
+    keyword linestart BinaryPattern rgb544 base bold
+    keyword linestart MapNotify rgb544 base bold
+    keyword linestart SwallowTitle rgb544 base bold
+    keyword linestart SwallowExec rgb544 base bold
+    keyword linestart SortOrder rgb544 base bold
+    keyword linestart FilePattern rgb544 base bold
+# (Well known values:)
+    keyword whole DirectoryApplication rgb151 base base
+    keyword whole Application rgb151 base base
+    keyword whole UTF-8 rgb151 base base
+    keyword whole UTF8 rgb151 base base
 # (Keys, the rest:)
     keyword linestart \[ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-\] rgb011 base bold
-# (Keys with locale postfix:)
-#     From "Localized values for keys":
-#       ...Keys with type localestring may be postfixed by [LOCALE], where LOCALE is the locale type of the entry.
-#       LOCALE must be of the form lang_COUNTRY.ENCODING@MODIFIER, where _COUNTRY, .ENCODING, and @MODIFIER may be omitted....
-context [ ] rgb131 base bold
-    keyword _ rgb131 base bold
-    keyword @ rgb131 base bold
-    keyword \{abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890\} rgb020 base base
+
+#context " " green base base
+#    spellcheck
+#    keyword \\" rgb252 base bold
+#    keyword \\\n rgb252 base bold
+#    keyword %% rgb252 base bold
+#    keyword %\[#0\s-\+,\]\[0123456789\]\[.\]\[0123456789\]\[L\]\{eEfgGoxX\} rgb500 base bold
+#    keyword %\[0\s-\+,\]\[0123456789\]\[.\]\[0123456789\]\[hl\]\{diu\} rgb511 base base
+#    keyword %\[hl\]n rgb111 base bold
+#    keyword %\[.\]\[0123456789\]s rgb115 base bold
+#    keyword %[*] rgb522 base bold
+#    keyword %c rgb225 base bold
+#    keyword \\\{0123\}\{01234567\}\{01234567\} rgb515 base base
+#    keyword \\\\ rgb133 base base+blink
+#    keyword \\' rgb055 base base
+#    keyword \\\{abtnvfr\} rgb220 base base
+
+#context exclusive <php? ?> cyan
+#    keyword whole &*; brightgreen
+
+#context <html > cyan
+#    keyword whole lang yellow base base+underline
+#    keyword whole &*; brightgreen
+#    keyword = brightred
+#    keyword whole ru brightblue
+
+
+
+
+
+context exclusive Name[ \n rgb040 base base
+    spellcheck
+    keyword \{][\} rgb135 base bold
+    wholechars ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_@
+    keyword whole am rgb131 base base
+    keyword whole ar rgb131 base base
+    keyword whole ast rgb131 base base
+    keyword whole be rgb131 base base
+    keyword whole bg rgb131 base base
+    keyword whole bn rgb131 base base
+    keyword whole ca rgb131 base base
+    keyword whole cs rgb131 base base
+    keyword whole da rgb131 base base
+    keyword whole de rgb131 base base
+    keyword whole el rgb131 base base
+    keyword whole en_AU rgb131 base base
+    keyword whole en_GB rgb131 base base
+    keyword whole eo rgb131 base base
+    keyword whole es rgb131 base base
+    keyword whole et rgb131 base base
+    keyword whole eu rgb131 base base
+    keyword whole fa_IR rgb131 base base
+    keyword whole fi rgb131 base base
+    keyword whole fr rgb131 base base
+    keyword whole gl rgb131 base base
+    keyword whole he rgb131 base base
+    keyword whole hr rgb131 base base
+    keyword whole hu rgb131 base base
+    keyword whole id rgb131 base base
+    keyword whole is rgb131 base base
+    keyword whole it rgb131 base base
+    keyword whole ja rgb131 base base
+    keyword whole kk rgb131 base base
+    keyword whole ko rgb131 base base
+    keyword whole lt rgb131 base base
+    keyword whole lv rgb131 base base
+    keyword whole ms rgb131 base base
+    keyword whole nb rgb131 base base
+    keyword whole nl rgb131 base base
+    keyword whole nn rgb131 base base
+    keyword whole oc rgb131 base base
+    keyword whole pa rgb131 base base
+    keyword whole pl rgb131 base base
+    keyword whole pt_BR rgb131 base base
+    keyword whole pt rgb131 base base
+    keyword whole ro rgb131 base base
+    keyword whole ru_RU rgb131 base base
+    keyword whole ru rgb131 base base
+    keyword whole sk rgb131 base base
+    keyword whole sq rgb131 base base
+    keyword whole sr rgb131 base base
+    keyword whole sv rgb131 base base
+    keyword whole te rgb131 base base
+    keyword whole th rgb131 base base
+    keyword whole tr rgb131 base base
+    keyword whole ug rgb131 base base
+    keyword whole uk rgb131 base base
+    keyword whole ur rgb131 base base
+    keyword whole ur_PK rgb131 base base
+    keyword whole vi rgb131 base base
+    keyword whole zh_CN rgb131 base base
+    keyword whole zh_HK rgb131 base base
+    keyword whole zh_TW rgb131 base base
+    wholechars left ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789`~!@#$%^&\*()-_\+=\\|}{[<,>.?/:;\s\t"'
+    keyword wholeleft \[\s\t\]= brightred base base
+    keyword \[]\s\t\]= rgb040 base base
+context exclusive Name \n rgb040 base base
+    spellcheck
+    wholechars left ABCDEFGHIJKLMNOPQRSTUVWXYZabcdfghijklmnopqrstuvwxyz0123456789`~!@#$%^&\*()-_\+=\\|}{[]<,>.?/:;\s\t"'
+    keyword wholeleft \[\s\t\]= brightred base base
+    keyword \[e\s\t\]= rgb040 base base
+
+context exclusive GenericName[ \n rgb040 base base
+    spellcheck
+    keyword \{][\} rgb135 base bold
+    wholechars ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_@
+    keyword whole am rgb131 base base
+    keyword whole ar rgb131 base base
+    keyword whole ast rgb131 base base
+    keyword whole be rgb131 base base
+    keyword whole bg rgb131 base base
+    keyword whole bn rgb131 base base
+    keyword whole ca rgb131 base base
+    keyword whole cs rgb131 base base
+    keyword whole da rgb131 base base
+    keyword whole de rgb131 base base
+    keyword whole el rgb131 base base
+    keyword whole en_AU rgb131 base base
+    keyword whole en_GB rgb131 base base
+    keyword whole eo rgb131 base base
+    keyword whole es rgb131 base base
+    keyword whole et rgb131 base base
+    keyword whole eu rgb131 base base
+    keyword whole fa_IR rgb131 base base
+    keyword whole fi rgb131 base base
+    keyword whole fr rgb131 base base
+    keyword whole gl rgb131 base base
+    keyword whole he rgb131 base base
+    keyword whole hr rgb131 base base
+    keyword whole hu rgb131 base base
+    keyword whole id rgb131 base base
+    keyword whole is rgb131 base base
+    keyword whole it rgb131 base base
+    keyword whole ja rgb131 base base
+    keyword whole kk rgb131 base base
+    keyword whole ko rgb131 base base
+    keyword whole lt rgb131 base base
+    keyword whole lv rgb131 base base
+    keyword whole ms rgb131 base base
+    keyword whole nb rgb131 base base
+    keyword whole nl rgb131 base base
+    keyword whole nn rgb131 base base
+    keyword whole oc rgb131 base base
+    keyword whole pa rgb131 base base
+    keyword whole pl rgb131 base base
+    keyword whole pt_BR rgb131 base base
+    keyword whole pt rgb131 base base
+    keyword whole ro rgb131 base base
+    keyword whole ru_RU rgb131 base base
+    keyword whole ru rgb131 base base
+    keyword whole sk rgb131 base base
+    keyword whole sq rgb131 base base
+    keyword whole sr rgb131 base base
+    keyword whole sv rgb131 base base
+    keyword whole te rgb131 base base
+    keyword whole th rgb131 base base
+    keyword whole tr rgb131 base base
+    keyword whole ug rgb131 base base
+    keyword whole uk rgb131 base base
+    keyword whole ur rgb131 base base
+    keyword whole ur_PK rgb131 base base
+    keyword whole vi rgb131 base base
+    keyword whole zh_CN rgb131 base base
+    keyword whole zh_HK rgb131 base base
+    keyword whole zh_TW rgb131 base base
+    wholechars left ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789`~!@#$%^&\*()-_\+=\\|}{[<,>.?/:;\s\t"'
+    keyword wholeleft \[\s\t\]= brightred base base
+    keyword \[]\s\t\]= rgb040 base base
+context exclusive GenericName \n rgb040 base base
+    spellcheck
+    wholechars left ABCDEFGHIJKLMNOPQRSTUVWXYZabcdfghijklmnopqrstuvwxyz0123456789`~!@#$%^&\*()-_\+=\\|}{[]<,>.?/:;\s\t"'
+    keyword wholeleft \[\s\t\]= brightred base base
+    keyword \[e\s\t\]= rgb040 base base
+
+context exclusive Comment[ \n rgb040 base base
+    spellcheck
+    keyword \{][\} rgb135 base bold
+    wholechars ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_@
+    keyword whole am rgb131 base base
+    keyword whole ar rgb131 base base
+    keyword whole ast rgb131 base base
+    keyword whole be rgb131 base base
+    keyword whole bg rgb131 base base
+    keyword whole bn rgb131 base base
+    keyword whole ca rgb131 base base
+    keyword whole cs rgb131 base base
+    keyword whole da rgb131 base base
+    keyword whole de rgb131 base base
+    keyword whole el rgb131 base base
+    keyword whole en_AU rgb131 base base
+    keyword whole en_GB rgb131 base base
+    keyword whole eo rgb131 base base
+    keyword whole es rgb131 base base
+    keyword whole et rgb131 base base
+    keyword whole eu rgb131 base base
+    keyword whole fa_IR rgb131 base base
+    keyword whole fi rgb131 base base
+    keyword whole fr rgb131 base base
+    keyword whole gl rgb131 base base
+    keyword whole he rgb131 base base
+    keyword whole hr rgb131 base base
+    keyword whole hu rgb131 base base
+    keyword whole id rgb131 base base
+    keyword whole is rgb131 base base
+    keyword whole it rgb131 base base
+    keyword whole ja rgb131 base base
+    keyword whole kk rgb131 base base
+    keyword whole ko rgb131 base base
+    keyword whole lt rgb131 base base
+    keyword whole lv rgb131 base base
+    keyword whole ms rgb131 base base
+    keyword whole nb rgb131 base base
+    keyword whole nl rgb131 base base
+    keyword whole nn rgb131 base base
+    keyword whole oc rgb131 base base
+    keyword whole pa rgb131 base base
+    keyword whole pl rgb131 base base
+    keyword whole pt_BR rgb131 base base
+    keyword whole pt rgb131 base base
+    keyword whole ro rgb131 base base
+    keyword whole ru_RU rgb131 base base
+    keyword whole ru rgb131 base base
+    keyword whole sk rgb131 base base
+    keyword whole sq rgb131 base base
+    keyword whole sr rgb131 base base
+    keyword whole sv rgb131 base base
+    keyword whole te rgb131 base base
+    keyword whole th rgb131 base base
+    keyword whole tr rgb131 base base
+    keyword whole ug rgb131 base base
+    keyword whole uk rgb131 base base
+    keyword whole ur rgb131 base base
+    keyword whole ur_PK rgb131 base base
+    keyword whole vi rgb131 base base
+    keyword whole zh_CN rgb131 base base
+    keyword whole zh_HK rgb131 base base
+    keyword whole zh_TW rgb131 base base
+    wholechars left ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789`~!@#$%^&\*()-_\+=\\|}{[<,>.?/:;\s\t"'
+    keyword wholeleft \[\s\t\]= brightred base base
+    keyword \[]\s\t\]= rgb040 base base
+context exclusive Comment \n rgb040 base base
+    spellcheck
+    wholechars left ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrsuvwxyz0123456789`~!@#$%^&\*()-_\+=\\|}{[]<,>.?/:;\s\t"'
+    keyword wholeleft \[\s\t\]= brightred base base
+    keyword \[e\s\t\]= rgb040 base base
+
+context exclusive Keywords[ \n rgb333 base base
+    spellcheck
+    keyword \{][\} rgb135 base bold
+    wholechars ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_@
+    keyword whole am rgb131 base base
+    keyword whole ar rgb131 base base
+    keyword whole ast rgb131 base base
+    keyword whole be rgb131 base base
+    keyword whole bg rgb131 base base
+    keyword whole bn rgb131 base base
+    keyword whole ca rgb131 base base
+    keyword whole cs rgb131 base base
+    keyword whole da rgb131 base base
+    keyword whole de rgb131 base base
+    keyword whole el rgb131 base base
+    keyword whole en_AU rgb131 base base
+    keyword whole en_GB rgb131 base base
+    keyword whole eo rgb131 base base
+    keyword whole es rgb131 base base
+    keyword whole et rgb131 base base
+    keyword whole eu rgb131 base base
+    keyword whole fa_IR rgb131 base base
+    keyword whole fi rgb131 base base
+    keyword whole fr rgb131 base base
+    keyword whole gl rgb131 base base
+    keyword whole he rgb131 base base
+    keyword whole hr rgb131 base base
+    keyword whole hu rgb131 base base
+    keyword whole id rgb131 base base
+    keyword whole is rgb131 base base
+    keyword whole it rgb131 base base
+    keyword whole ja rgb131 base base
+    keyword whole kk rgb131 base base
+    keyword whole ko rgb131 base base
+    keyword whole lt rgb131 base base
+    keyword whole lv rgb131 base base
+    keyword whole ms rgb131 base base
+    keyword whole nb rgb131 base base
+    keyword whole nl rgb131 base base
+    keyword whole nn rgb131 base base
+    keyword whole oc rgb131 base base
+    keyword whole pa rgb131 base base
+    keyword whole pl rgb131 base base
+    keyword whole pt_BR rgb131 base base
+    keyword whole pt rgb131 base base
+    keyword whole ro rgb131 base base
+    keyword whole ru_RU rgb131 base base
+    keyword whole ru rgb131 base base
+    keyword whole sk rgb131 base base
+    keyword whole sq rgb131 base base
+    keyword whole sr rgb131 base base
+    keyword whole sv rgb131 base base
+    keyword whole te rgb131 base base
+    keyword whole th rgb131 base base
+    keyword whole tr rgb131 base base
+    keyword whole ug rgb131 base base
+    keyword whole uk rgb131 base base
+    keyword whole ur rgb131 base base
+    keyword whole ur_PK rgb131 base base
+    keyword whole vi rgb131 base base
+    keyword whole zh_CN rgb131 base base
+    keyword whole zh_HK rgb131 base base
+    keyword whole zh_TW rgb131 base base
+    wholechars left ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789`~!@#$%^&\*()-_\+=\\|}{[<,>.?/:;\s\t"'
+    keyword wholeleft \[\s\t\]= brightred base base
+    keyword \[]\s\t\]= rgb333 base base
+context exclusive Keywords \n rgb333 base base
+    spellcheck
+    wholechars left ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrtuvwxyz0123456789`~!@#$%^&\*()-_\+=\\|}{[]<,>.?/:;\s\t"'
+    keyword wholeleft \[\s\t\]= brightred base base
+    keyword \[s\s\t\]= rgb333 base base
+
+context exclusive X-KDE-Keywords[ \n rgb333 base base
+    spellcheck
+    keyword \{][\} rgb135 base bold
+    wholechars ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_@
+    keyword whole am rgb131 base base
+    keyword whole ar rgb131 base base
+    keyword whole ast rgb131 base base
+    keyword whole be rgb131 base base
+    keyword whole bg rgb131 base base
+    keyword whole bn rgb131 base base
+    keyword whole ca rgb131 base base
+    keyword whole cs rgb131 base base
+    keyword whole da rgb131 base base
+    keyword whole de rgb131 base base
+    keyword whole el rgb131 base base
+    keyword whole en_AU rgb131 base base
+    keyword whole en_GB rgb131 base base
+    keyword whole eo rgb131 base base
+    keyword whole es rgb131 base base
+    keyword whole et rgb131 base base
+    keyword whole eu rgb131 base base
+    keyword whole fa_IR rgb131 base base
+    keyword whole fi rgb131 base base
+    keyword whole fr rgb131 base base
+    keyword whole gl rgb131 base base
+    keyword whole he rgb131 base base
+    keyword whole hr rgb131 base base
+    keyword whole hu rgb131 base base
+    keyword whole id rgb131 base base
+    keyword whole is rgb131 base base
+    keyword whole it rgb131 base base
+    keyword whole ja rgb131 base base
+    keyword whole kk rgb131 base base
+    keyword whole ko rgb131 base base
+    keyword whole lt rgb131 base base
+    keyword whole lv rgb131 base base
+    keyword whole ms rgb131 base base
+    keyword whole nb rgb131 base base
+    keyword whole nl rgb131 base base
+    keyword whole nn rgb131 base base
+    keyword whole oc rgb131 base base
+    keyword whole pa rgb131 base base
+    keyword whole pl rgb131 base base
+    keyword whole pt_BR rgb131 base base
+    keyword whole pt rgb131 base base
+    keyword whole ro rgb131 base base
+    keyword whole ru_RU rgb131 base base
+    keyword whole ru rgb131 base base
+    keyword whole sk rgb131 base base
+    keyword whole sq rgb131 base base
+    keyword whole sr rgb131 base base
+    keyword whole sv rgb131 base base
+    keyword whole te rgb131 base base
+    keyword whole th rgb131 base base
+    keyword whole tr rgb131 base base
+    keyword whole ug rgb131 base base
+    keyword whole uk rgb131 base base
+    keyword whole ur rgb131 base base
+    keyword whole ur_PK rgb131 base base
+    keyword whole vi rgb131 base base
+    keyword whole zh_CN rgb131 base base
+    keyword whole zh_HK rgb131 base base
+    keyword whole zh_TW rgb131 base base
+    wholechars left ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789`~!@#$%^&\*()-_\+=\\|}{[<,>.?/:;\s\t"'
+    keyword wholeleft \[\s\t\]= brightred base base
+    keyword \[]\s\t\]= rgb333 base base
+context exclusive X-KDE-Keywords \n rgb333 base base
+    spellcheck
+    wholechars left ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrtuvwxyz0123456789`~!@#$%^&\*()-_\+=\\|}{[]<,>.?/:;\s\t"'
+    keyword wholeleft \[\s\t\]= brightred base base
+    keyword \[s\s\t\]= rgb333 base base
+
+context exclusive linestart Version \n rgb333 base base
+    wholechars left ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789`~!@#$%^&\*()-_\+\\|}]{[<,>.?/:;\s\t"'
+    keyword wholeleft \[\s\t\]1.\{0,1,2\} rgb151 base base
+    wholechars left ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmopqrstuvwxyz0123456789`~!@#$%^&\*()-_\+=\|}]{[<,>.?/:;\s\t"'
+    keyword wholeleft \[\s\t\]= brightred base base
+    wholechars left ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789`~!@#$%^&\*()-_\+\\|}]{[<,>.?/:;\s\t"'
+    keyword \[n=\s\t\]1.\{0,1,2\} rgb333 base base
+    keyword \[n=\s\t\]= rgb333 base base
+
+context exclusive linestart Categor\[iesy\s\] \n rgb333 base base
+    wholechars ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-
+    keyword = brightred base base
+    keyword ; magenta base base
+    keyword true rgb050 base bold
+    keyword false rgb050 base bold
+# (Registered categories - main, additional & reserved:)
+# (Main:)
+    keyword whole AudioVideo rgb151 base underline
+    keyword whole Audio rgb151 base underline
+    keyword whole Video rgb151 base underline
+    keyword whole Development rgb151 base underline
+    keyword whole Education rgb151 base underline
+    keyword whole Game rgb151 base underline
+    keyword whole Graphics rgb151 base underline
+    keyword whole Network rgb151 base underline
+    keyword whole Office rgb151 base underline
+    keyword whole Science rgb151 base underline
+    keyword whole Settings rgb151 base underline
+    keyword whole System rgb151 base underline
+    keyword whole Utility rgb151 base underline
+# (Additonal:)
+    keyword whole Building rgb151 base base
+    keyword whole Debugger rgb151 base base
+    keyword whole IDE rgb151 base base
+    keyword whole GUIDesigner rgb151 base base
+    keyword whole Profiling rgb151 base base
+    keyword whole RevisionControl rgb151 base base
+    keyword whole Translation rgb151 base base
+    keyword whole Calendar rgb151 base base
+    keyword whole ContactManagement rgb151 base base
+    keyword whole Database rgb151 base base
+    keyword whole Dictionary rgb151 base base
+    keyword whole Chart rgb151 base base
+    keyword whole Email rgb151 base base
+    keyword whole Finance rgb151 base base
+    keyword whole FlowChart rgb151 base base
+    keyword whole PDA rgb151 base base
+    keyword whole ProjectManagement rgb151 base base
+    keyword whole Presentation rgb151 base base
+    keyword whole Spreadsheet rgb151 base base
+    keyword whole WordProcessor rgb151 base base
+    keyword whole 2DGraphics rgb151 base base
+    keyword whole VectorGraphics rgb151 base base
+    keyword whole RasterGraphics rgb151 base base
+    keyword whole 3DGraphics rgb151 base base
+    keyword whole Scanning rgb151 base base
+    keyword whole OCR rgb151 base base
+    keyword whole Photography rgb151 base base
+    keyword whole Publishing rgb151 base base
+    keyword whole Viewer rgb151 base base
+    keyword whole TextTools rgb151 base base
+    keyword whole DesktopSettings rgb151 base base
+    keyword whole HardwareSettings rgb151 base base
+    keyword whole Printing rgb151 base base
+    keyword whole PackageManager rgb151 base base
+    keyword whole Dialup rgb151 base base
+    keyword whole InstantMessaging rgb151 base base
+    keyword whole Chat rgb151 base base
+    keyword whole IRCClient rgb151 base base
+    keyword whole Feed rgb151 base base
+    keyword whole FileTransfer rgb151 base base
+    keyword whole HamRadio rgb151 base base
+    keyword whole News rgb151 base base
+    keyword whole P2P rgb151 base base
+    keyword whole RemoteAccess rgb151 base base
+    keyword whole Telephony rgb151 base base
+    keyword whole TelephonyTools rgb151 base base
+    keyword whole VideoConference rgb151 base base
+    keyword whole WebBrowser rgb151 base base
+    keyword whole WebDevelopment rgb151 base base
+    keyword whole Midi rgb151 base base
+    keyword whole Mixer rgb151 base base
+    keyword whole Sequencer rgb151 base base
+    keyword whole Tuner rgb151 base base
+    keyword whole TV rgb151 base base
+    keyword whole AudioVideoEditing rgb151 base base
+    keyword whole Player rgb151 base base
+    keyword whole Recorder rgb151 base base
+    keyword whole DiscBurning rgb151 base base
+    keyword whole ActionGame rgb151 base base
+    keyword whole AdventureGame rgb151 base base
+    keyword whole ArcadeGame rgb151 base base
+    keyword whole BoardGame rgb151 base base
+    keyword whole BlocksGame rgb151 base base
+    keyword whole CardGame rgb151 base base
+    keyword whole KidsGame rgb151 base base
+    keyword whole LogicGame rgb151 base base
+    keyword whole RolePlaying rgb151 base base
+    keyword whole Shooter rgb151 base base
+    keyword whole Simulation rgb151 base base
+    keyword whole SportsGame rgb151 base base
+    keyword whole StrategyGame rgb151 base base
+    keyword whole Art rgb151 base base
+    keyword whole Construction rgb151 base base
+    keyword whole Music rgb151 base base
+    keyword whole Languages rgb151 base base
+    keyword whole ArtificialIntelligence rgb151 base base
+    keyword whole Astronomy rgb151 base base
+    keyword whole Biology rgb151 base base
+    keyword whole Chemistry rgb151 base base
+    keyword whole ComputerScience rgb151 base base
+    keyword whole DataVisualization rgb151 base base
+    keyword whole Economy rgb151 base base
+    keyword whole Electricity rgb151 base base
+    keyword whole Geography rgb151 base base
+    keyword whole Geology rgb151 base base
+    keyword whole Geoscience rgb151 base base
+    keyword whole History rgb151 base base
+    keyword whole Humanities rgb151 base base
+    keyword whole ImageProcessing rgb151 base base
+    keyword whole Literature rgb151 base base
+    keyword whole Maps rgb151 base base
+    keyword whole Math rgb151 base base
+    keyword whole NumericalAnalysis rgb151 base base
+    keyword whole MedicalSoftware rgb151 base base
+    keyword whole Physics rgb151 base base
+    keyword whole Robotics rgb151 base base
+    keyword whole Spirituality rgb151 base base
+    keyword whole Sports rgb151 base base
+    keyword whole ParallelComputing rgb151 base base
+    keyword whole Amusement rgb151 base base
+    keyword whole Archiving rgb151 base base
+    keyword whole Compression rgb151 base base
+    keyword whole Electronics rgb151 base base
+    keyword whole Emulator rgb151 base base
+    keyword whole Engineering rgb151 base base
+    keyword whole FileTools rgb151 base base
+    keyword whole FileManager rgb151 base base
+    keyword whole TerminalEmulator rgb151 base base
+    keyword whole Filesystem rgb151 base base
+    keyword whole Monitor rgb151 base base
+    keyword whole Security rgb151 base base
+    keyword whole Accessibility rgb151 base base
+    keyword whole Calculator rgb151 base base
+    keyword whole Clock rgb151 base base
+    keyword whole TextEditor rgb151 base base
+    keyword whole Documentation rgb151 base base
+    keyword whole Adult rgb151 base base
+    keyword whole Core rgb151 base base
+    keyword whole KDE rgb151 base base
+    keyword whole GNOME rgb151 base base
+    keyword whole XFCE rgb151 base base
+    keyword whole GTK rgb151 base base
+    keyword whole Qt rgb151 base base
+    keyword whole Motif rgb151 base base
+    keyword whole Java rgb151 base base
+    keyword whole ConsoleOnly rgb151 base base
+# (Reserved:)
+    keyword whole Screensaver rgb522 base base
+    keyword whole TrayIcon rgb522 base base
+    keyword whole Applet rgb522 base base
+    keyword whole Shell rgb522 base base
+# (Values, which ae clearly in use in GNOME/XFCE:)
+    keyword whole X-XFCE-Helper rgb553 base base
+    keyword whole X-Xfce-Toplevel rgb553 base base
+    keyword whole X-XFCE-Toplevel rgb553 base base

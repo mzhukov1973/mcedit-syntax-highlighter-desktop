@@ -1,0 +1,46 @@
+########################################################################
+##  Syntax highlighting for MESON build file                          ##
+##   (for MC Editor)                                                  ##
+##                                                                    ##
+##   Version: 0.0.1                                                   ##
+##                                                                    ##
+##   Author:  Maxim Zhukov <mzhukov31415dev@gmail.com> 2019+          ##
+##                                                                    ##
+##   ToDo:                                                            ##
+##     ~ A LOT!                                                       ##
+##     ~ ...                                                          ##
+##                                                                    ##
+##   History:                                                         ##
+##     ~ v0.0.1 [2019-05-05] --- First working version.               ##
+##                                                                    ##
+########################################################################
+
+caseinsensitive
+
+context default lightgray base base
+    spellcheck
+    keyword       [ red    base   bold
+    keyword       ] red    base   bold
+    keyword       { yellow base   bold
+    keyword       } yellow base   bold
+    keyword       : yellow base   base
+    keyword       , yellow base   base
+    keyword       . yellow base   base
+    keyword whole false    rgb404 base bold
+    keyword whole true     rgb141 base bold
+    keyword whole null     rgb440 base bold
+
+context " " green base base
+    keyword whole false    rgb404      base bold
+    keyword whole true     rgb141      base bold
+    keyword whole null     rgb440      base bold
+    spellcheck
+
+context ' ' brightgreen base base
+    keyword whole false    rgb404 base bold
+    keyword whole true     rgb141 base bold
+    keyword whole null     rgb440 base bold
+    spellcheck
+
+context linestart # \n rgb550 gray4 bold
+    spellcheck

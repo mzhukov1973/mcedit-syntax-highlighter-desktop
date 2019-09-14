@@ -1,0 +1,63 @@
+########################################################################
+##  Syntax highlighting for VALA source code                          ##
+##   (for MC Editor)                                                  ##
+##                                                                    ##
+##   Version: 0.0.1                                                   ##
+##                                                                    ##
+##   Author:  Maxim Zhukov <mzhukov31415dev@gmail.com> 2019+          ##
+##                                                                    ##
+##   ToDo:                                                            ##
+##     ~ A LOT!                                                       ##
+##     ~ ...                                                          ##
+##                                                                    ##
+##   History:                                                         ##
+##     ~ v0.0.1 [2019-05-05] --- First working version.               ##
+##                                                                    ##
+########################################################################
+
+caseinsensitive
+
+define cl_def             lightgray base  base
+define cl_true            rgb151    base  bold
+define cl_false           rgb511    base  bold
+define cl_null            rgb430    base  bold
+define cl_sq_brackets     rgb500    base  bold
+define cl_crl_braces      rgb550    base  bold
+define cl_dbl_quotes      rgb030    base  bold
+define cl_sgl_quotes      rgb040    base  bold
+define cl_colon           rgb550    base  bold
+define cl_comma           rgb550    base  base
+define cl_dbl_quoted_text rgb020    base  base
+define cl_sgl_quoted_text rgb030    base  base
+define cl_comment_delim   rgb550    gray4 bold
+define cl_comment         rgb550    gray4 base
+
+context default cl_def
+    spellcheck
+    keyword whole true   cl_true
+    keyword whole false  cl_false
+    keyword whole null   cl_null
+    keyword       \{[]\} cl_sq_brackets
+    keyword       \{{}\} cl_crl_braces
+    keyword       "      cl_dbl_quotes
+    keyword       '      cl_sgl_quotes
+    keyword       :      cl_colon
+    keyword       ,      cl_comma
+    keyword       /\*    cl_comment_delim
+    keyword       \*/    cl_comment_delim
+
+context exclusive " " cl_dbl_quoted_text
+    spellcheck
+    keyword whole true  cl_true
+    keyword whole false cl_false
+    keyword whole null  cl_null
+
+context exclusive ' ' cl_sgl_quoted_text
+    spellcheck
+    keyword whole true  cl_true
+    keyword whole false cl_false
+    keyword whole null  cl_null
+
+
+context exclusive /\* \*/ cl_comment
+    spellcheck

@@ -1,0 +1,447 @@
+# Webmanifest (webmanifest.json/manifest.json) syntax highlighting
+
+caseinsensitive
+wholechars abcdefghijklmnopqrstuvwxyz0123456789_
+define cl_def               lightgray base base
+define cl_dbl_quotes        rgb030    base bold
+define cl_sgl_quotes        rgb040    base bold
+define cl_comma             rgb550    base base
+define cl_colon             rgb550    base bold
+define cl_crl_braces        rgb550    base bold
+define cl_sq_brackets       rgb500    base bold
+define cl_true              rgb151    base bold
+define cl_false             rgb511    base bold
+define cl_null              rgb430    base bold
+define cl_dbl_quoted_text   rgb020    base base
+define cl_#xxxxxx_#         rgb520    base bold
+define cl_#xxxxxx_x         rgb410    base base
+define cl_main_crl_brackets rgb050    base bold
+define cl_av_mem            rgb544    base bold
+define cl_known_prop_name   rgb544    base base
+define cl_known_prop_val    rgb050    base bold
+define cl_url_base          rgb122    base bold
+define cl_url_prot          rgb212    base bold
+define cl_url_path_sep      rgb044    base bold
+define cl_url_file_name     rgb455    base base
+
+context default cl_def
+    spellcheck
+    keyword linestart \{{}\}\n                                                                                                                 cl_main_crl_brackets
+
+# ╭──────╮
+# │ name │
+#┌┴──────┴───────────────────────────────────┐
+context "name":\[\s\t\] \n cl_dbl_quoted_text
+#├───────────────────────────────────────────┤
+    keyword       name  cl_av_mem
+wholechars abcdefghijklmnopqrstuvwxyz0123456789_"'.-=\+\*()
+    keyword whole false cl_false
+    keyword whole true  cl_true
+    keyword whole null  cl_null
+wholechars abcdefghijklmnopqrstuvwxyz0123456789_
+    keyword       "     cl_dbl_quotes
+    keyword       :     cl_colon
+    keyword       ,     cl_comma
+#└───────────────────────────────────────────┘
+
+# ╭────────────╮
+# │ short_name │
+#┌┴────────────┴───────────────────────────────────┐
+context "short_name":\[\s\t\] \n cl_dbl_quoted_text
+#├─────────────────────────────────────────────────┤
+    keyword       short_name cl_av_mem
+wholechars abcdefghijklmnopqrstuvwxyz0123456789_"'.-=\+\*()
+    keyword whole false      cl_false
+    keyword whole true       cl_true
+    keyword whole null       cl_null
+wholechars abcdefghijklmnopqrstuvwxyz0123456789_
+    keyword       "          cl_dbl_quotes
+    keyword       :          cl_colon
+    keyword       ,          cl_comma
+#└─────────────────────────────────────────────────┘
+
+# ╭─────────────╮
+# │ description │
+#┌┴─────────────┴───────────────────────────────────┐
+context "description":\[\s\t\] \n cl_dbl_quoted_text
+    spellcheck
+#├──────────────────────────────────────────────────┤
+    keyword       description cl_av_mem
+wholechars abcdefghijklmnopqrstuvwxyz0123456789_"'.-=\+\*()
+    keyword whole false       cl_false
+    keyword whole true        cl_true
+    keyword whole null        cl_null
+wholechars abcdefghijklmnopqrstuvwxyz0123456789_
+    keyword       "           cl_dbl_quotes
+    keyword       :           cl_colon
+    keyword       ,           cl_comma
+#└──────────────────────────────────────────────────┘
+
+# ╭─────╮
+# │ dir │
+#┌┴─────┴───────────────────────────────────┐
+context "dir":\[\s\t\] \n cl_def
+#├──────────────────────────────────────────┤
+    keyword       dir   cl_av_mem
+wholechars abcdefghijklmnopqrstuvwxyz0123456789_"'.-=\+\*()
+    keyword whole false cl_false
+    keyword whole true  cl_true
+    keyword whole null  cl_null
+wholechars abcdefghijklmnopqrstuvwxyz0123456789_
+    keyword whole auto  cl_known_prop_val
+    keyword whole rtl   cl_known_prop_val
+    keyword whole ltr   cl_known_prop_val
+    keyword       "     cl_dbl_quotes
+    keyword       :     cl_colon
+    keyword       ,     cl_comma
+#└──────────────────────────────────────────┘
+
+# ╭────────────╮
+# │ categories │
+#┌┴────────────┴───────────────────────────────────┐
+context "categories":\[\s\t\] \n cl_def
+    spellcheck
+#├─────────────────────────────────────────────────┤
+    keyword       categories      cl_av_mem
+wholechars abcdefghijklmnopqrstuvwxyz0123456789_"'.-=\+\*()
+    keyword whole false           cl_false
+    keyword whole true            cl_true
+    keyword whole null            cl_null
+wholechars abcdefghijklmnopqrstuvwxyz0123456789_
+    keyword whole books           cl_known_prop_val
+    keyword whole business        cl_known_prop_val
+    keyword whole education       cl_known_prop_val
+    keyword whole entertainment   cl_known_prop_val
+    keyword whole finance         cl_known_prop_val
+    keyword whole fitness         cl_known_prop_val
+    keyword whole food            cl_known_prop_val
+    keyword whole games           cl_known_prop_val
+    keyword whole government      cl_known_prop_val
+    keyword whole health          cl_known_prop_val
+    keyword whole kids            cl_known_prop_val
+    keyword whole lifestyle       cl_known_prop_val
+    keyword whole magazines       cl_known_prop_val
+    keyword whole medical         cl_known_prop_val
+    keyword whole music           cl_known_prop_val
+    keyword whole navigation      cl_known_prop_val
+    keyword whole news            cl_known_prop_val
+    keyword whole personalization cl_known_prop_val
+    keyword whole photo           cl_known_prop_val
+    keyword whole politics        cl_known_prop_val
+    keyword whole productivity    cl_known_prop_val
+    keyword whole security        cl_known_prop_val
+    keyword whole shopping        cl_known_prop_val
+    keyword whole social          cl_known_prop_val
+    keyword whole sports          cl_known_prop_val
+    keyword whole travel          cl_known_prop_val
+    keyword whole utilities       cl_known_prop_val
+    keyword whole weather         cl_known_prop_val
+    keyword       "               cl_dbl_quotes
+    keyword       :               cl_colon
+    keyword       ,               cl_comma
+#└─────────────────────────────────────────────────┘
+
+# ╭─────────╮
+# │ display │
+#┌┴─────────┴───────────────────────────────────┐
+context "display":\[\s\t\] \n cl_def
+    spellcheck
+#├──────────────────────────────────────────────┤
+    keyword       display    cl_av_mem
+wholechars abcdefghijklmnopqrstuvwxyz0123456789_"'.-=\+\*()
+    keyword whole false      cl_false
+    keyword whole true       cl_true
+    keyword whole null       cl_null
+wholechars abcdefghijklmnopqrstuvwxyz0123456789_
+    keyword whole fullscreen cl_known_prop_val
+    keyword whole standalone cl_known_prop_val
+    keyword whole minimal-ui cl_known_prop_val
+    keyword whole browser    cl_known_prop_val
+    keyword       "          cl_dbl_quotes
+    keyword       :          cl_colon
+    keyword       ,          cl_comma
+#└──────────────────────────────────────────────┘
+
+# ╭─────────────╮
+# │ theme_color │
+#┌┴─────────────┴───────────────────────────────────┐
+context "theme_color":\[\s\t\] \n cl_def
+#├──────────────────────────────────────────────────┤
+    keyword           theme_color                                                                                                              cl_av_mem
+wholechars abcdefghijklmnopqrstuvwxyz0123456789_"'.-=\+\*()
+    keyword whole     false                                                                                                                    cl_false
+    keyword whole     true                                                                                                                     cl_true
+    keyword whole     null                                                                                                                     cl_null
+wholechars abcdefghijklmnopqrstuvwxyz0123456789_
+    keyword wholeleft #                                                                                                                        cl_#xxxxxx_#
+    keyword whole     \{0123456789abcdef\}\{0123456789abcdef\}\{0123456789abcdef\}\{0123456789abcdef\}\{0123456789abcdef\}\{0123456789abcdef\} cl_#xxxxxx_x
+    keyword           "                                                                                                                        cl_dbl_quotes
+    keyword           :                                                                                                                        cl_colon
+    keyword           ,                                                                                                                        cl_comma
+#└──────────────────────────────────────────────────┘
+
+# ╭──────────────────╮
+# │ background_color │
+#┌┴──────────────────┴───────────────────────────────────┐
+context "background_color":\[\s\t\] \n cl_def
+#├───────────────────────────────────────────────────────┤
+    keyword           background_color                                                                                                         cl_av_mem
+wholechars abcdefghijklmnopqrstuvwxyz0123456789_"'.-=\+\*()
+    keyword whole     false                                                                                                                    cl_false
+    keyword whole     true                                                                                                                     cl_true
+    keyword whole     null                                                                                                                     cl_null
+wholechars abcdefghijklmnopqrstuvwxyz0123456789_
+    keyword wholeleft #                                                                                                                        cl_#xxxxxx_#
+    keyword whole     \{0123456789abcdef\}\{0123456789abcdef\}\{0123456789abcdef\}\{0123456789abcdef\}\{0123456789abcdef\}\{0123456789abcdef\} cl_#xxxxxx_x
+    keyword           "                                                                                                                        cl_dbl_quotes
+    keyword           :                                                                                                                        cl_colon
+    keyword           ,                                                                                                                        cl_comma
+#└───────────────────────────────────────────────────────┘
+
+# ╭─────────────╮
+# │ orientation │
+#┌┴─────────────┴───────────────────────────────────┐
+context "orientation":\[\s\t\] \n cl_def
+    spellcheck
+#├──────────────────────────────────────────────────┤
+    keyword       orientation         cl_av_mem
+wholechars abcdefghijklmnopqrstuvwxyz0123456789_"'.-=\+\*()
+    keyword whole false               cl_false
+    keyword whole true                cl_true
+    keyword whole null                cl_null
+wholechars abcdefghijklmnopqrstuvwxyz0123456789_
+    keyword whole portrait-primary    cl_known_prop_val
+    keyword whole portrait-secondary  cl_known_prop_val
+    keyword whole landscape-primary   cl_known_prop_val
+    keyword whole landscape-secondary cl_known_prop_val
+    keyword whole landscape           cl_known_prop_val
+    keyword whole portrait            cl_known_prop_val
+    keyword whole natural             cl_known_prop_val
+    keyword whole any                 cl_known_prop_val
+    keyword       "                   cl_dbl_quotes
+    keyword       :                   cl_colon
+    keyword       ,                   cl_comma
+#└──────────────────────────────────────────────────┘
+
+# ╭──────╮
+# │ lang │
+#┌┴──────┴───────────────────────────────────┐
+context "lang":\[\s\t\] \n cl_def
+#├───────────────────────────────────────────┤
+    keyword       lang  cl_av_mem
+wholechars abcdefghijklmnopqrstuvwxyz0123456789_"'.-=\+\*()
+    keyword whole false cl_false
+    keyword whole true  cl_true
+    keyword whole null  cl_null
+wholechars abcdefghijklmnopqrstuvwxyz0123456789_
+    keyword whole en-US cl_known_prop_val
+    keyword whole en-GB cl_known_prop_val
+    keyword whole ru-RU cl_known_prop_val
+    keyword whole fr-FR cl_known_prop_val
+#    keyword whole \{abcdefghijklmnopqrstuvwxyz\}\{abcdefghijklmnopqrstuvwxyz\}-\{abcdefghijklmnopqrstuvwxyz\}\{abcdefghijklmnopqrstuvwxyz\} cl_known_prop_val
+    keyword whole en    cl_known_prop_val
+    keyword whole ru    cl_known_prop_val
+    keyword whole fr    cl_known_prop_val
+#    keyword whole \{abcdefghijklmnopqrstuvwxyz\}\{abcdefghijklmnopqrstuvwxyz\}                                                              cl_known_prop_val
+    keyword "           cl_dbl_quotes
+    keyword :           cl_colon
+    keyword ,           cl_comma
+#└───────────────────────────────────────────┘
+
+# ╭───────────╮
+# │ start_url │
+#┌┴───────────┴─────────────────────────────┐
+context "start_url":\[\s\t\]"\[abcdefghijklmnopqrstuvwxyz0123456789_\-:/\] \n cl_url_base
+#├──────────────────────────────────────────┤
+    keyword start_url  cl_av_mem
+    keyword https://   cl_url_prot
+    keyword http://    cl_url_prot
+    keyword file://    cl_url_prot
+wholechars /
+    keyword wholeright \{abcdefghijklmnopqrstuvwxyz0123456789_\-\}\[abcdefghijklmnopqrstuvwxyz0123456789_\-\]\.\{abcdefghijklmnopqrstuvwxyz0123456789_\.\-\}\[abcdefghijklmnopqrstuvwxyz0123456789_\.\-\] cl_url_file_name
+    keyword            \{/\}  cl_url_path_sep
+    keyword "          cl_dbl_quotes
+    keyword :          cl_colon
+    keyword ,          cl_comma
+wholechars abcdefghijklmnopqrstuvwxyz0123456789_
+#└──────────────────────────────────────────┘
+
+# ╭───────╮
+# │ scope │
+#┌┴───────┴─────────────────────────────┐
+context "scope":\[\s\t\]" \n cl_url_base
+#├──────────────────────────────────────┤
+    keyword scope      cl_av_mem
+    keyword https://   cl_url_prot
+    keyword http://    cl_url_prot
+    keyword file://    cl_url_prot
+wholechars /
+    keyword wholeright \{abcdefghijklmnopqrstuvwxyz0123456789_\-\}\[abcdefghijklmnopqrstuvwxyz0123456789_\-\]\.\{abcdefghijklmnopqrstuvwxyz0123456789_\.\-\}\[abcdefghijklmnopqrstuvwxyz0123456789_\.\-\] cl_url_file_name
+    keyword            \{/\.\}  cl_url_path_sep
+    keyword "          cl_dbl_quotes
+    keyword :          cl_colon
+    keyword ,          cl_comma
+wholechars abcdefghijklmnopqrstuvwxyz0123456789_
+#└──────────────────────────────────────┘
+
+# ╭───────╮
+# │ icons │
+#┌┴───────┴───────────────────────────────────┐
+context "icons":\[\s\t\][ ] cl_sq_brackets
+#├────────────────────────────────────────────┤
+    keyword       icons                                                                         cl_av_mem
+    keyword       \{{}\}                                                                        cl_crl_braces
+    keyword whole src                                                                           cl_known_prop_name
+    keyword whole sizes                                                                         cl_known_prop_name
+    keyword whole type                                                                          cl_known_prop_name
+    keyword whole purpose                                                                       cl_known_prop_name
+    keyword whole platform                                                                      cl_known_prop_name
+# "icons:src" values:
+    keyword whole android-chrome-\{0123456789\}\[0123456789\]x\{0123456789\}\[0123456789\]\.png cl_known_prop_val
+    keyword whole android-chrome-\{0123456789\}\[0123456789\]x\{0123456789\}\[0123456789\]\.svg cl_known_prop_val
+    keyword whole favicon\[0123456789\]\.ico                                                    cl_known_prop_val
+# "icons:type" values:
+    keyword whole image/\[abcdefghijklmnopqrstuvwxyz\+-/\]                                      cl_known_prop_val
+# "icons:sizes" values:
+    keyword whole \{0123456789\}\[0123456789\]x\{0123456789\}\[0123456789\]                     cl_known_prop_val
+# "icons:purpose" values:
+    keyword whole any                                                                           cl_known_prop_val
+    keyword whole badge                                                                         cl_known_prop_val
+    keyword whole maskable                                                                      cl_known_prop_val
+# "icons:platform" values:
+    keyword whole play                                                                          cl_known_prop_val
+    keyword whole itunes                                                                        cl_known_prop_val
+    keyword whole windows                                                                       cl_known_prop_val
+    keyword       "                                                                             cl_dbl_quotes
+    keyword       :                                                                             cl_colon
+    keyword       ,                                                                             cl_comma
+    keyword       \{/abcdefghijklmnopqrstuvwxyz0123456789_\-\.\}                                cl_def
+#└────────────────────────────────────────────┘
+
+# ╭─────────────╮
+# │ screenshots │
+#┌┴─────────────┴───────────────────────────────────┐
+context "screenshots":\[\s\t\][ ] cl_sq_brackets
+#├──────────────────────────────────────────────────┤
+    keyword       screenshots                                                         cl_av_mem
+    keyword       \{{}\}                                                              cl_crl_braces
+    keyword whole src                                                                 cl_known_prop_name
+    keyword whole sizes                                                               cl_known_prop_name
+    keyword whole type                                                                cl_known_prop_name
+    keyword whole purpose                                                             cl_known_prop_name
+    keyword whole platform                                                            cl_known_prop_name
+# "screenshots:src" values:
+    keyword wholeright \{0123456789\}\[0123456789\]x\{0123456789\}\[0123456789\]\.png cl_known_prop_val
+    keyword wholeright \{0123456789\}\[0123456789\]x\{0123456789\}\[0123456789\]\.svg cl_known_prop_val
+# "screenshots:type" values:
+    keyword whole image/\[abcdefghijklmnopqrstuvwxyz\+-/\]                            cl_known_prop_val
+# "screenshots:sizes" values:
+    keyword whole \{0123456789\}\[0123456789\]x\{0123456789\}\[0123456789\]           cl_known_prop_val
+# "screenshots:purpose" values:
+    keyword whole any                                                                 cl_known_prop_val
+    keyword whole badge                                                               cl_known_prop_val
+    keyword whole maskable                                                            cl_known_prop_val
+# "screenshots:platform" values:
+    keyword whole play                                                                cl_known_prop_val
+    keyword whole itunes                                                              cl_known_prop_val
+    keyword whole windows                                                             cl_known_prop_val
+    keyword       "                                                                   cl_dbl_quotes
+    keyword       :                                                                   cl_colon
+    keyword       ,                                                                   cl_comma
+    keyword       \{/abcdefghijklmnopqrstuvwxyz0123456789_\-\.\}                      cl_def
+#└──────────────────────────────────────────────────┘
+
+# ╭───────────────╮
+# │ serviceworker │
+#┌┴───────────────┴───────────────────────────────────┐
+context "serviceworker":\[\s\t\]{ } cl_crl_braces
+#├────────────────────────────────────────────────────┤
+    keyword       serviceworker                                  cl_av_mem
+    keyword whole false                                          cl_false
+    keyword whole true                                           cl_true
+    keyword whole null                                           cl_null
+    keyword whole src                                            cl_known_prop_name
+    keyword whole scope                                          cl_known_prop_name
+    keyword whole type                                           cl_known_prop_name
+    keyword whole update_via_cache                               cl_known_prop_name
+# "serviceworker:type" values:
+    keyword whole classic                                        cl_known_prop_val
+    keyword whole module                                         cl_known_prop_val
+# "serviceworker:update_via_cache" values:
+    keyword whole imports                                        cl_known_prop_val
+    keyword whole all                                            cl_known_prop_val
+    keyword whole none                                           cl_known_prop_val
+    keyword       "                                              cl_dbl_quotes
+    keyword       :                                              cl_colon
+    keyword       ,                                              cl_comma
+    keyword       \{/abcdefghijklmnopqrstuvwxyz0123456789_\-\.\} cl_def
+#└────────────────────────────────────────────────────┘
+
+# ╭──────────────────────╮
+# │ related_applications │
+#┌┴──────────────────────┴───────────────────────────────────┐
+context "related_applications":\[\s\t\]{ } cl_crl_braces
+#├───────────────────────────────────────────────────────────┤
+    keyword       related_applications                           cl_av_mem
+    keyword whole false                                          cl_false
+    keyword whole true                                           cl_true
+    keyword whole null                                           cl_null
+# ExternalApplicationResources properties:
+    keyword whole platform                                       cl_known_prop_name
+    keyword whole url                                            cl_known_prop_name
+    keyword whole src                                            cl_known_prop_name
+    keyword whole id                                             cl_known_prop_name
+    keyword whole min_version                                    cl_known_prop_name
+    keyword whole fingerprints                                   cl_known_prop_name
+    keyword whole type                                           cl_known_prop_name
+    keyword whole value                                          cl_known_prop_name
+# "related_applications:platform" values:
+    keyword whole play                                           cl_known_prop_val
+    keyword whole itunes                                         cl_known_prop_val
+    keyword whole windows                                        cl_known_prop_val
+# "related_applications:id" values:
+# "related_applications:min_version" values:
+# "related_applications:id" values:
+# "related_applications:fingerprints" values:
+# "related_applications:type" values:
+    keyword       "                                              cl_dbl_quotes
+    keyword       :                                              cl_colon
+    keyword       ,                                              cl_comma
+    keyword       \{/abcdefghijklmnopqrstuvwxyz0123456789_\-\.\} cl_def
+#└───────────────────────────────────────────────────────────┘
+
+# ╭─────────────────────────────╮
+# │ prefer_related_applications │
+#┌┴─────────────────────────────┴───────────────────────────────────┐
+context "prefer_related_applications":\[\s\t\] \n cl_def
+#├──────────────────────────────────────────────────────────────────┤
+    keyword       prefer_related_applications cl_av_mem
+wholechars abcdefghijklmnopqrstuvwxyz0123456789_"'.-=\+\*()
+    keyword whole false                       cl_false
+    keyword whole true                        cl_true
+    keyword whole null                        cl_null
+wholechars abcdefghijklmnopqrstuvwxyz0123456789_
+    keyword       "                           cl_dbl_quotes
+    keyword       :                           cl_colon
+    keyword       ,                           cl_comma
+#└──────────────────────────────────────────────────────────────────┘
+
+# ╭────────────────╮
+# │ iarc_rating_id │
+#┌┴────────────────┴───────────────────────────────────┐
+context "iarc_rating_id":\[\s\t\] \n cl_def
+#├─────────────────────────────────────────────────────┤
+    keyword       iarc_rating_id           cl_av_mem
+wholechars abcdefghijklmnopqrstuvwxyz0123456789_"'.-=\+\*()
+    keyword whole false                    cl_false
+    keyword whole true                     cl_true
+    keyword whole null                     cl_null
+wholechars abcdefghijklmnopqrstuvwxyz0123456789_
+    keyword       "                        cl_dbl_quotes
+    keyword       :                        cl_colon
+    keyword       ,                        cl_comma
+#└─────────────────────────────────────────────────────┘
+
+context " " cl_dbl_quoted_text
+    spellcheck
+    keyword " cl_dbl_quotes

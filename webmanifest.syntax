@@ -39,7 +39,7 @@ define cl_#xxxxxx_x         rgb410    base base
 define cl_main_crl_brackets rgb050    base bold
 define cl_av_mem            rgb544    base bold
 define cl_known_prop_name   rgb544    base base
-define cl_known_prop_val    rgb050    base bold
+define cl_known_prop_val    rgb050    base base
 define cl_url_base          rgb122    base bold
 define cl_url_prot          rgb212    base bold
 define cl_url_path_sep      rgb044    base bold
